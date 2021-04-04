@@ -1,0 +1,7 @@
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTaches\bin\Debug\FR_1915_ListeTaches.exe.config
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTaches\bin\Debug\FR_1915_ListeTaches.exe
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTaches\bin\Debug\FR_1915_ListeTaches.pdb
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTaches\obj\Debug\FR_1915_ListeTaches.csprojAssemblyReference.cache
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTaches\obj\Debug\FR_1915_ListeTaches.csproj.CoreCompileInputs.cache
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTaches\obj\Debug\FR_1915_ListeTaches.exe
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTaches\obj\Debug\FR_1915_ListeTaches.pdb

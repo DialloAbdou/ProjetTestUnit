@@ -1,0 +1,17 @@
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\FR_1915_ListeTachesTests.dll
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\FR_1915_ListeTachesTests.pdb
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\FR_1915_ListeTaches.exe
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\FR_1915_ListeTaches.pdb
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\FR_1915_ListeTaches.exe.config
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\obj\Debug\FR_1915_ListeTachesTests.csprojAssemblyReference.cache
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\obj\Debug\FR_1915_ListeTachesTests.csproj.CoreCompileInputs.cache
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\obj\Debug\FR_1915_ListeTachesTests.csproj.CopyComplete
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\obj\Debug\FR_1915_ListeTachesTests.dll
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\obj\Debug\FR_1915_ListeTachesTests.pdb
