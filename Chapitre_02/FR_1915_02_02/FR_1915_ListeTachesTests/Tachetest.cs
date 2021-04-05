@@ -44,22 +44,30 @@ namespace FR_1915_ListeTachesTests
         [TestMethod]
         public void effectuer_2JTraivailResteAfaire_NonTerminer()
         {
-            var tacheAvril = NouvelleTache1erAvrilEntame(duree: 3, fait: 2);
+            //var tacheAvril = NouvelleTache1erAvrilEntame(duree: 3, fait: 2);
+            var tacheAvril = NouvelleTache1erAvril("Poisson Avril", 3);
             Assert.AreEqual("Poisson Avril", tacheAvril.Titre);
             tacheAvril.Effectuer(_2j_);
             Assert.AreEqual(_1J_, tacheAvril.ResteAFaire);
             Assert.IsFalse(tacheAvril.EstTerminee);
-
         }
 
         [TestMethod]
         public void effectuer_3JTraivail_TravailEstTerminer()
         {
-           var tacheAvril = NouvelleTache1erAvrilEntame(duree: 3, fait: 3);
+           //var tacheAvril = NouvelleTache1erAvrilEntame(duree: 3, fait: 3);
+            var tacheAvril = NouvelleTache1erAvril("Poisson Avril", 3);
             Assert.AreEqual("Poisson Avril", tacheAvril.Titre);
             tacheAvril.Effectuer(_3j_);
             Assert.AreEqual(_0J_, tacheAvril.ResteAFaire);
             Assert.IsTrue(tacheAvril.EstTerminee);
+        }
+
+        [TestMethod]
+        public void effectuer_Trop_LeverUneException()
+        {
+            var tachesAvril = NouvelleTache1erAvrilEntame(duree: 3, fait: 2);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => tachesAvril.Effectuer(_2j_));
         }
     }
 }
