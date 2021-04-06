@@ -41,13 +41,14 @@ namespace FR_1915_ListeTachesTests
             Assert.AreEqual(_3j_, tache1erAvril.ResteAFaire);
         }
 
-        [TestMethod]
-        public void effectuer_2JTraivailResteAfaire_NonTerminer()
+        [DataTestMethod]
+        [DataRow(2,1,3 , DisplayName = "effectuer_2JTraivailResteAfaire_NonTerminer")]
+        public void effectuer_2JTraivailResteAfaire_NonTerminer(double resteAffaire,int fait , int totalJour)
         {
-            //var tacheAvril = NouvelleTache1erAvrilEntame(duree: 3, fait: 2);
-            var tacheAvril = NouvelleTache1erAvril("Poisson Avril", 3);
-            Assert.AreEqual("Poisson Avril", tacheAvril.Titre);
-            tacheAvril.Effectuer(_2j_);
+            var tacheAvril = NouvelleTache1erAvrilEntame(duree: totalJour, fait: fait);
+          ////  var tacheAvril = NouvelleTache1erAvril("Poisson Avril", 3);
+          ///  Assert.AreEqual("Poisson Avril", tacheAvril.Titre);
+            tacheAvril.Effectuer(TimeSpan.FromDays(resteAffaire));
             Assert.AreEqual(_1J_, tacheAvril.ResteAFaire);
             Assert.IsFalse(tacheAvril.EstTerminee);
         }
