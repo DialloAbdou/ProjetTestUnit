@@ -1,6 +1,7 @@
 ﻿using FR_1915_ListeTaches;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Linq;
 
 namespace FR_1915_ListeTachesTests
 {
@@ -41,6 +42,7 @@ namespace FR_1915_ListeTachesTests
             Assert.AreEqual(_3j_, tache1erAvril.ResteAFaire);
         }
 
+        /****/
         [DataTestMethod]
         [DataRow(2,1,3 , DisplayName = "effectuer_2JTraivailResteAfaire_NonTerminer")]
         public void effectuer_2JTraivailResteAfaire_NonTerminer(double resteAffaire,int fait , int totalJour)
@@ -69,6 +71,19 @@ namespace FR_1915_ListeTachesTests
         {
             var tachesAvril = NouvelleTache1erAvrilEntame(duree: 3, fait: 2);
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => tachesAvril.Effectuer(_2j_));
+        }
+        [TestMethod]
+        public void effectuer_FiltreTerminer_TacheABCD_AVECACTermine()
+        {
+            var tacheA = NouvelleTache1erAvrilEntame(2, 2);
+            var tacheB = NouvelleTache1erAvril(duree:2);
+            var tacheC = NouvelleTache1erAvrilEntame(1, 1);
+            var tacheD = NouvelleTache1erAvrilEntame(3, 2);
+
+            var listeObtenu = new Tache[] { tacheA, tacheB, tacheC, tacheD };
+            var Attendu = new Tache[] { tacheA, tacheC };
+            var obtenue = Tache.FiltrerTerminees(listeObtenu);
+            CollectionAssert.AreEqual(Attendu,obtenue.ToList());
         }
     }
 }
