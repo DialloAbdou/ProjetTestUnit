@@ -35,5 +35,17 @@ namespace FR_1915_ListeTaches
                    where tache.EstTerminee
                    select tache;                   
         }
+
+        //==========Utlisation De CSV=======
+
+        public string LigneCSV(IFormatProvider format)
+        {
+            return string.Format("{0};{1};{2};{3};{4}",
+                Titre,
+                Debut.ToString("d", format),
+                Duree.ToString("c", format),
+                (Duree - ResteAFaire).ToString("c", format),
+                ResteAFaire.ToString("c", format));
+        }
     }
-}
+}   

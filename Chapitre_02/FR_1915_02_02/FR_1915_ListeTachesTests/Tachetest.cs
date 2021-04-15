@@ -1,6 +1,8 @@
 ﻿using FR_1915_ListeTaches;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NSubstitute;
 using System;
+using System.Globalization;
 using System.Linq;
 
 namespace FR_1915_ListeTachesTests
@@ -84,6 +86,20 @@ namespace FR_1915_ListeTachesTests
             var Attendu = new Tache[] { tacheA, tacheC };
             var obtenue = Tache.FiltrerTerminees(listeObtenu);
             CollectionAssert.AreEqual(Attendu,obtenue.ToList());
+        }
+
+        [TestMethod]
+        public void LigneCs_Standard_RetourneLigne()
+        {
+            var tacheAvril = NouvelleTache1erAvril("Poisson Avril", duree:2);
+
+            var stubFormat = Substitute.For<IFormatProvider>();
+            stubFormat.GetFormat(Arg.Any<Type>()).Returns(DateTimeFormatInfo.InvariantInfo);
+            tacheAvril.Effectuer(_1J_);
+            string attendu = "Poisson d'avril;04/01/2018;2.00:00:00;1.00:00:00;1.00:00:00;1.00:00:00",
+              obtenue = tacheAvril.LigneCSV(stubFormat);
+            Assert.AreEqual(attendu, obtenue);
+
         }
     }
 }

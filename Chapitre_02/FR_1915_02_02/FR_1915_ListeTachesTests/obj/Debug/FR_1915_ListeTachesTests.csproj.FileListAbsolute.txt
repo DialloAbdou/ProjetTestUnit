@@ -15,3 +15,7 @@ D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\obj\Debug\F
 D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\obj\Debug\FR_1915_ListeTachesTests.csproj.CopyComplete
 D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\obj\Debug\FR_1915_ListeTachesTests.dll
 D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\obj\Debug\FR_1915_ListeTachesTests.pdb
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\Castle.Core.dll
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\NSubstitute.dll
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\ProjetTestUnit\Chapitre_02\FR_1915_02_02\FR_1915_ListeTachesTests\bin\Debug\System.Threading.Tasks.Extensions.xml
