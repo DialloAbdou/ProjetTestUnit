@@ -14,17 +14,17 @@ namespace FR_1915_ListeTaches.Tests
         private readonly TimeSpan _1j_ = TimeSpan.FromDays(1);
         private readonly TimeSpan _0j_ = TimeSpan.FromDays(0);
 
-        private Tache  tache1erAvril3j;
+        private Tache tache1erAvril3j;
         private DateTime dateDebut = new DateTime(2018, 4, 1);
         [TestInitialize]
         public void initTest()
         {
-          //  var dateDebut = new DateTime(2018, 4, 1);
+            //  var dateDebut = new DateTime(2018, 4, 1);
             tache1erAvril3j = new Tache("Poisson d'avril", dateDebut, _3j_);
         }
 
-        private Tache NouvelleTacheAVril(string titre="Poison d'avril",int duree = 3)
-        {    
+        private Tache NouvelleTacheAVril(string titre = "Poison d'avril", int duree = 3)
+        {
             return new Tache(titre, dateDebut, TimeSpan.FromDays(duree));
         }
         private Tache NouvelleTacheEntame(int duree, int fait)
@@ -34,19 +34,19 @@ namespace FR_1915_ListeTaches.Tests
             return tacherAvril;
 
         }
-      
+
         [TestMethod]
         public void Initialiser_3jAu1erAvril_DefinitTitreDureeResteAFaireNonTerminee()
         {
             Assert.AreEqual("Poisson d'avril", tache1erAvril3j.Titre);
             Assert.AreEqual(_3j_, tache1erAvril3j.Duree);
             Assert.AreEqual(_3j_, tache1erAvril3j.ResteAFaire);
-            Assert.IsFalse (tache1erAvril3j.EstTerminee);
+            Assert.IsFalse(tache1erAvril3j.EstTerminee);
         }
         [TestMethod]
         public void effectuer_2JourTravail_TacheNonTerminee()
         {
-            var tacheEntame = NouvelleTacheEntame(duree:3, fait:2);
+            var tacheEntame = NouvelleTacheEntame(duree: 3, fait: 2);
             Assert.AreEqual(_1j_, tacheEntame.ResteAFaire);
             Assert.IsFalse(tacheEntame.EstTerminee);
         }
@@ -97,13 +97,13 @@ namespace FR_1915_ListeTaches.Tests
         public void effectuer_JourTravailEnCollection_TacheTerminee()
         {
             var tacheEntameA = NouvelleTacheEntame(duree: 3, fait: 3);
-            var tacheEntameB = NouvelleTacheEntame(duree:3,fait:2);
+            var tacheEntameB = NouvelleTacheEntame(duree: 3, fait: 2);
             var tacheEntameC = NouvelleTacheEntame(duree: 1, fait: 1);
             var tacheEntameD = NouvelleTacheAVril(duree: 2);
             var tacheListes = new Tache[] { tacheEntameA, tacheEntameB, tacheEntameC, tacheEntameD };
             var tacheAttendues = new Tache[] { tacheEntameA, tacheEntameC };
             var tacheObtenues = Tache.FiltrerTerminees(tacheListes);
-            CollectionAssert.AreEqual(tacheAttendues, tacheObtenues.ToList()); 
+            CollectionAssert.AreEqual(tacheAttendues, tacheObtenues.ToList());
         }
 
         [TestMethod]
@@ -114,8 +114,32 @@ namespace FR_1915_ListeTaches.Tests
             subtitudeFormat.GetFormat(Arg.Any<Type>()).Returns(DateTimeFormatInfo.InvariantInfo);
             tacheAvril.Effectuer(_1j_);
             string attendu = "Poisson d'avril;04/16/2021;2.00:00:00;1.00:00:00;1.00:00:00;1.00:00:00";
-            var obtenue =   tacheAvril.LigneCSV(subtitudeFormat);
+            var obtenue = tacheAvril.LigneCSV(subtitudeFormat);
             Assert.AreEqual(attendu, obtenue);
+        }
+
+        [TestMethod]
+        public void FinEstimer_1TiereJourCs_TacheFormat()
+        {
+            var tacheAvril = NouvelleTacheAVril(duree: 2);
+            var subtitudeFormat = Substitute.For<IHorloge>();
+            tacheAvril.HorlogeTest = subtitudeFormat;
+            subtitudeFormat.Maintenant.Returns(new DateTime(2018, 4, 3));
+            tacheAvril.Effectuer(_1j_);
+            Assert.AreEqual(new DateTime(2018, 4, 7), tacheAvril.FinEstimee);
+
+        }
+
+
+        [TestMethod]
+        public void Suivis_2effetuer_2Appel()
+        {
+            var tacheAvril = NouvelleTacheAVril(duree: 4);
+            var mockGress = Substitute.For<IProgress<TimeSpan>>();
+            tacheAvril.Effectuer(_2j_);
+            tacheAvril.Effectuer(_1j_);
+            mockGress.Received().Report(_2j_);
+            mockGress.Received().Report(_1j_);
         }
     }
 }

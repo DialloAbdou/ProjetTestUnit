@@ -7,7 +7,7 @@ using System.Text;
 namespace FR_1915_ListeTaches
 {
     public class Tache
-    {      
+    {
         public Tache(string titre, DateTime debut, TimeSpan charge)
         {
             Titre = titre;
@@ -16,12 +16,13 @@ namespace FR_1915_ListeTaches
             ResteAFaire = charge;
         }
 
-        public string   Titre { get; private set; }
+        public string Titre { get; private set; }
         public DateTime Debut { get; private set; }
         public TimeSpan Duree { get; private set; }
         public TimeSpan ResteAFaire { get; private set; }
-        public bool     EstTerminee { get => ResteAFaire == TimeSpan.Zero; }
+        public bool EstTerminee { get => ResteAFaire == TimeSpan.Zero; }
         private IHorloge horloge = new HorlogeSysteme();
+
 
         public void Effectuer(TimeSpan duree)
         {
@@ -37,9 +38,15 @@ namespace FR_1915_ListeTaches
         {
             return from tache in listeTaches
                    where tache.EstTerminee
-                   select tache;                   
+                   select tache;
         }
 
+#if 
+        public IHorloge HorlogeTest 
+        {
+            set { horloge = value; }
+        }
+#endif
         //==========Utlisation De CSV=======
 
         public string LigneCSV(IFormatProvider format)
