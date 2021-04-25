@@ -7,8 +7,9 @@ namespace FR_1915_ListeTaches.Tests
     public class TacheTest
     {
         [TestMethod]
-        public void TestMethod1()
-        {            
+        public void InitTest()
+        {  
+           
         }
     }
 }

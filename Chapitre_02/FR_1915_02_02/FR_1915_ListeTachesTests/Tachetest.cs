@@ -91,15 +91,15 @@ namespace FR_1915_ListeTachesTests
         [TestMethod]
         public void LigneCs_Standard_RetourneLigne()
         {
-            var tacheAvril = NouvelleTache1erAvril("Poisson Avril", duree:2);
-
+            var tacheAvril = NouvelleTache1erAvril("Poisson Avril", duree: 2);
             var stubFormat = Substitute.For<IFormatProvider>();
             stubFormat.GetFormat(Arg.Any<Type>()).Returns(DateTimeFormatInfo.InvariantInfo);
             tacheAvril.Effectuer(_1J_);
-            string attendu = "Poisson d'avril;04/01/2018;2.00:00:00;1.00:00:00;1.00:00:00;1.00:00:00",
+            string attendu = "Poisson d'avril;04/16/2021;2.00:00:00;1.00:00:00;1.00:00:00;1.00:00:00",
               obtenue = tacheAvril.LigneCSV(stubFormat);
             Assert.AreEqual(attendu, obtenue);
 
         }
+            
     }
 }
